@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedully/about</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+    <style>
+
+      a{
+        text-decoration: none;
+        color: #000;
+      }
+/* Nav Bar css */
+      .navbar{
+        background-color: #fff;
+        height: 80px;
+        margin: 20px;
+        border-radius: 16px;
+        padding: 0.5rem;
+       position: absolute;
+      }
+      #logo {
+       margin-top: 4px;
+       margin-left: 0px;
+       width: 180px; /* Set an initial width */
+       height: auto; /* Maintain aspect ratio */
+            }
+     .login-button{
+        background-color: #ffa600dc ;
+        color: #fff;
+        font-size: 14px;
+        padding: 8px 20px;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: 0.3s backgroung-color;
+      }
+
+      .login-button:hover{
+        background-color: #ff9100;
+        color: #fff;
+      }
+
+      .navbar-toggler{
+        border: none;
+        font-size: 1.25rem;
+      }
+
+      .navbar-toggler:focus, .btn-close:focus{
+        box-shadow: none;
+        outline: none;
+      }
+
+      .nav-link{
+        color: #666777;
+        font-weight: 500;
+        position: relative;
+      }
+
+      .nav-link:hover, .nav-link.active{
+        color: #000;
+      }
+      @media (max-width: 767px) {
+  #logo {
+    display: none; /* Hide the logo on mobile screens */
+  }
+
+  .login-button {
+    margin-right: 50%; /* Adjust the left margin for the login button */
+  }
+}
+      @media (min-width: 991px) {
+        .nav-link::before{
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100%;
+          height: 2px;
+          background-color: orange;
+          visibility: hidden;
+          transition: 0.3s ease-in-out;
+        }
+
+        .nav-link:hover::before, .nav-link:active::before{
+          width: 100%;
+          visibility: visible;
+        }
+    }
+     /* Nav bar css end */
+
+     /* Hero section css */
+     .hero-section{
+      background: url(./images/pexels-pixabay-302769.jpg) no-repeat center;
+      background-size: cover;
+      width: 100%;
+     
+     }
+
+     .hero-section::before{
+      background-color: rgba(0, 0, 0, 0.6);
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+     }
+
+     .hero-section .container{
+      height: 100vh;
+      z-index: 1;
+      position: relative;
+     }
+
+     .hero-section h1{
+      font-size: 1.5em;
+     }
+
+    
+     /* Breadcrumb */
+.breadcrumb {
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  list-style: none;
+  font-size: large;
+}
+
+.breadcrumb-item {
+  display: inline-block;
+}
+
+.breadcrumb-item a {
+  color: orange;
+  text-decoration: none;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+  content: '>';
+  margin: 0 5px;
+  color: #fff;
+}
+
+.breadcrumb-item.active {
+  color: #fff;
+}
+
+.blockquote{
+  color: orange;
+  font-size: 2em;
+}
+
+/* card css */
+
+.card {
+  border: none; 
+  border-radius: 10px; 
+  transition: transform 0.3s;
+  font-size: 18px;
+  
+}
+
+/* .card:hover {
+  transform: scale(1.05); 
+} */
+
+.card-img {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  max-height: 100%; 
+}
+
+.card-body {
+  padding: 1.25rem; 
+}
+
+.card-text {
+  color: #555; 
+}
+
+/* card css end */
+    /* Custom styles for the button */
+    .custom-btn {
+      color: #FFA500; /* Orange color for text */
+      background-color: #FFFFFF; /* White background */
+      border: 2px solid #FFA500; /* Orange border */
+    }
+    .custom-btn:hover {
+      background-color: #FFA500; /* Orange background on hover */
+      border-color: #FFA500; /* Orange border on hover */
+      color: #fff; /* White text on hover */
+    }
+
+    </style>
+</head>
+
+<body>
+  <!-- Nav Bar -->
+  <nav class="navbar navbar-expand-lg navbar-expand-md fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/index.html"><img src="./images/output-onlinegiftools.gif" alt="Logo" id="logo"></a>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src="./images/output-onlinegiftools.gif" alt="Logo" width="100%" height="150px"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2 active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2" href="product.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2" href="bootstrap-news-template/news.html">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <a href="login page.html" class="login-button">Login</a>
+      <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+  <!-- Nav bar end -->
+
+  <!-- Hero section -->
+  <section class="hero-section">
+    <div class="container d-flex align-items-center justify-content-center fs-1 text-white flex-column">
+      <h1><span style="color: orange;">A</span>bout Us</h1>
+      <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Library</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+  <!-- Hero section end -->
+  
+  <!-- Company card -->
+  <figure class="text-center my-5 center mycard">
+    <blockquote class="blockquote">
+      <p class="gocomp"><h1>Company</h1></p>
+    </blockquote>
+    <hr style="color: #000; width: 80%; margin-left: 10%;">
+  <div class="container mt-5">
+    <div class="card-deck">
+      <div class="card">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="./images/company.jpg" class="card-img" alt="Image Alt Text">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <p class="card-text">"<b >Schedully</b>, the premier calendar website, has a rich history that traces its origins back to the early 2000s when a group of passionate developers envisioned a solution to simplify time management and scheduling. Originally conceived as a humble tool for personal use, Schedually quickly evolved into a robust platform in response to the growing demand for efficient scheduling and event coordination.
+
+                Since its inception, Schedually has been committed to providing users with a seamless and intuitive experience. The website's array of services caters to individuals, businesses, and organizations alike. Offering features such as customizable event creation, automated reminders, and collaborative scheduling, Schedually empowers users to streamline their daily lives and enhance productivity. The platform has become a go-to resource for professionals, event planners, and anyone seeking an organized and efficient approach to managing their time.
+                
+                Schedually continues to innovate, adapting to the ever-changing landscape of scheduling needs. Whether it's coordinating team meetings, organizing social events, or managing personal appointments, Schedually remains at the forefront, offering unparalleled convenience and functionality. With a user-friendly interface and a commitment to constant improvement, Schedually stands as a testament to the evolution of digital scheduling, making calendars not just tools but integral components of our daily lives."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr style="color: #000; width: 80%; margin-left: 10%; margin-top: 100px;">
+      <!-- Company card end -->
+
+      <!-- Start Team Section -->
+		<div class="untree_co-section" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+			<div class="container">
+
+				<div class="row mb-5">
+					<div class="col-lg-5 mx-auto text-center">
+						<h2 class="section-title" style="color: orange;">Our Team</h2>
+					</div>
+				</div>
+
+				<div class="row">
+
+					<!-- Start Column 1 -->
+					<div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
+						<img src="./images/femaleicon.png" class="img-fluid mb-5">
+						<center><h3 clas><a href="#" style="text-decoration: none; color: #000;"><span class="">Warisha</span></a></h3></center>
+					</div> 
+					<!-- End Column 1 -->
+
+					<!-- Start Column 2 --> 
+					<div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
+						<img src="./images/icon3.png" class="img-fluid mb-5">
+						<center><h3 clas><a href="#" style="text-decoration: none; color: #000"><span class="">Haider</span></a></h3></center>
+
+					</div> 
+					<!-- End Column 2 -->
+
+					<!-- Start Column 3 -->
+					<div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
+						<img src="./images/icon4l.jpg" class="img-fluid mb-5">
+						<center><h3 clas><a href="#" style="text-decoration: none; color: #000"><span class="">Hassam</span></a></h3></center>
+					</div> 
+					<!-- End Column 3 -->
+
+					<!-- Start Column 4 -->
+					<div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
+						<img src="./images/icon5.jpg" class="img-fluid mb-5">
+						<center><h3 clas><a href="#" style="text-decoration: none; color: #000"><span class="">Omar</span></a></h3></center>
+					</div> 
+					<!-- End Column 4 -->
+				</div>
+			</div>
+		</div><br>
+		<!-- End Team Section -->
+
+      <!-- Learn more btn -->
+      <hr style="color: #000; width: 80%; margin-left: 10%; margin-top: 100px;">
+      
+      <button type="button" class="btn custom-btn my-5 btn-lg">Learn More</button>
+      <!-- Learn more btn end -->
+
+ <!--FOOTER--> 
+ <hr class="mx-0 px-0">
+ <footer>
+     <div class="row justify-content-around mb-0 pt-5 pb-0">
+         <div class=" col-11">
+             <div class="row justify-content-center">
+                 <div class="col-md-3 col-12 font-italic align-items-center mt-md-3 mt-4">
+                     <h5>
+                       <a href="index.html"><span><h1 style="color: #FFA500;">Schedually</h1></span></a>
+                       <br>
+                       <!-- <b class="text-dark"> Key<span class="text-muted"> Pass</span></b> -->
+                     </h5>
+                     <p class="social mt-md-3 mt-2"> 
+                       <a href="https://www.facebook.com/">
+                         <i class="fa fa-facebook "></i>
+                       </a> 
+                       <a href="https://www.linkedin.com/">
+                           <i class="fa fa-linkedin "></i>
+                       </a> 
+                       <a href="https://www.twitter.com/">
+                           <i class="fa fa-twitter "></i>
+                       </a>  
+                     </p> 
+                     <small class="copy-rights cursor-pointer">Ⓒ 2023 CalendarsTeam <br>T2108M - Aptech North Karachi</small><br> 
+                     <small>Copyright.All Rights Resered. </small>
+                 </div>
+                 <div class="col-md-3 col-12 my-sm-0 mt-5">
+                     <ul class="list-unstyled">
+                         <li class="mt-md-3 mt-4" style="color: #FFA500;">INFORMATION</li>
+                         <li><a href="about.html">About Us</a></li>
+                         <li><a href="contact.html">Contact Us</a></li>
+                         <li><a href="about.html">Company</a></li>
+                         <li><a href="about.html">Our Teams</a></li>
+                     </ul>
+                 </div>
+                 <div class="col-md-3 col-12 my-sm-0 mt-5">
+                     <ul class="list-unstyled">
+                         <li class="mt-md-3 mt-4" style="color: #FFA500;">PRODUCTS</li>
+                         <li><a href="/product.html">Calendars</a></li>
+                         <li><a href="/product.html">Diaries</a></li>
+                         <li><a href="product.html">Sales</a></li>
+                         <li><a href="product.html">Best-selling</a></li>
+                     </ul>
+                 </div>
+                 <div class="col-xl-auto col-md-3 col-12 my-sm-0 mt-5">
+                     <ul class="list-unstyled">
+                         <li class="mt-md-3 mt-4" style="color: #FFA500;">CUSTOMER SERVICE</li>
+                         <li><a href="#">FAQs</a></li>
+                         <li><a href="#">Trust and safety</a></li>
+                         <li><a href="#">Privacy settings</a></li>
+                         <li><a href="#">Cookie Preferences</a></li>
+                     </ul>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </footer>
+</div>
+</div>
+<br><br>
+<hr>
+
+</body>
+
+</html>

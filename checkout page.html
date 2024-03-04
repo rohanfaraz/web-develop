@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Checkout Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f4f4f4;
+    }
+
+    .checkout-container {
+      max-width: 600px;
+      margin: 20px auto;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #FFB500;
+      overflow: hidden;
+    }
+
+    .checkout-header {
+      background-color: orange;
+      color: #fff;
+      padding: 5px;
+      text-align: center;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin: 10px;
+    }
+
+    label {
+      margin-bottom: 8px;
+    }
+
+    input {
+      padding: 10px;
+      margin-bottom: 16px;
+      border: 1px solid orange;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      padding: 15px;
+      background-color: orange;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    button:hover {
+      background-color: #FFB500;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .checkout-container {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="checkout-container">
+    <div class="checkout-header">
+      <h2>Checkout</h2>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-group" style="border-color: orange;">
+      <label for="address">Address:</label>
+      <textarea id="address" style="border-color: orange;" name="address" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="card-number">Card Number:</label>
+      <input type="text" id="card-number" name="card-number" required>
+    </div>
+
+    <div class="form-group">
+      <label for="cvv">Contact Number</label>
+      <input type="text" id="cvv" name="cvv" required>
+    </div>
+
+    <div class="form-group" style="border-color: orange;">
+        <label for="address">Special Instructions:</label>
+        <textarea id="address" style="border-color: orange;" name="address" required></textarea>
+      </div>
+
+    <a href="product.html"><button onclick="submitOrder()">Place Order</button></a>
+  </div>
+
+  <script>
+    function submitOrder() {
+      // Perform validation and processing logic
+      alert('Order submitted successfully!');
+      // Redirect to a thank you page or take further actions
+      // window.location.href = 'thank-you.html';
+    }
+  </script>
+
+</body>
+</html>

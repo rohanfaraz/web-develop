@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedully/products</title>
+
+<!------ Google Fonts ------>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Karla:wght@200;300;400;500&family=Montserrat+Alternates:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+
+<!-- Bootstrap CSS-->	
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<style>
+  body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;     
+}
+a{
+  text-decoration: none;
+  color: #000;
+}
+/* Nav Bar css */
+.navbar{
+        background-color: #fff;
+        height: 80px;
+        margin: 20px;
+        border-radius: 16px;
+        padding: 0.5rem;
+       position: absolute;
+      }
+      #logo {
+       margin-top: 4px;
+       margin-left: 0px;
+       width: 180px; /* Set an initial width */
+       height: auto; /* Maintain aspect ratio */
+            }
+     .login-button{
+        background-color: #FFBF00 ;
+        color: #fff;
+        border: 2px solid #FFBF00;
+        font-size: 14px;
+        padding: 8px 20px;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: 0.3s background-color;
+     }
+      .login-button:hover{
+        background-color: #FFA500; 
+      border-color: #FFA500; 
+      color: #fff; 
+      }
+      .navbar-toggler{
+        border: none;
+        font-size: 1.25rem;
+      }
+      .navbar-toggler:focus, .btn-close:focus{
+        box-shadow: none;
+        outline: none;
+      }
+      .nav-link{
+        color: #666777;
+        font-weight: 500;
+        position: relative;
+      }
+      .nav-link:hover, .nav-link.active{
+        color: #000;
+      }
+      @media (max-width: 767px) {
+  #logo {
+    display: none; /* Hide the logo on mobile screens */
+  }
+  .login-button {
+    margin-right: 50%; /* Adjust the left margin for the login button */
+  }
+}
+      @media (min-width: 991px) {
+        .nav-link::before{
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100%;
+          height: 2px;
+          background-color: orange;
+          visibility: hidden;
+          transition: 0.3s ease-in-out;
+        }
+        .nav-link:hover::before, .nav-link:active::before{
+          width: 100%;
+          visibility: visible;
+        }
+    }
+     /* Nav bar css end */
+   /* Hero section css */
+   .hero-section{
+      background: url(./images/bg.jpeg) no-repeat center;
+      background-size: cover;
+      width: 100%;
+          }
+     .hero-section::before{
+      background-color: rgba(0, 0, 0, 0.6);
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+     }
+     .hero-section .container{
+      height: 100vh;
+      z-index: 1;
+      position: relative;
+     }
+     .hero-section h1{
+      font-size: 1.5em;
+     }
+       /* Breadcrumb */
+.breadcrumb {
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  list-style: none;
+  font-size: large;
+}
+
+.breadcrumb-item {
+  display: inline-block;
+}
+
+.breadcrumb-item a {
+  color: orange;
+  text-decoration: none;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+  content: '>';
+  margin: 0 5px;
+  color: #fff;
+}
+
+.breadcrumb-item.active {
+  color: #fff;
+}
+
+.blockquote{
+  color: orange;
+  font-size: 2em;
+}
+/* Hero section css End*/
+/* Category css */
+#category{
+  padding: 5% 6%;
+}
+#product-cards{
+  padding: 5% 10%;
+}
+#footer{
+ margin-bottom: 2%;
+ margin-top: 2%;
+}
+.filter-btns{
+  text-align: center;
+}
+.filter-btn{
+  background: none;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 10px 30px;
+  font-size: 16px;
+  color: #d3d3d3;
+  font-weight: 600;
+  letter-spacing: 2px;
+  position: relative;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.filter-btn::after{
+  content: "";
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: 2px;
+  width: 0;
+  background-color: orange;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out
+}
+.filter-btn:hover{
+  color: orange;
+}
+.filter-btn:hover::after{
+  width: 100%;
+}
+/* active button */
+.active-btn{
+  color: orange;
+}
+.active-btn::after{
+  width: 100%;
+}
+.canvas-title{
+  text-align: center;
+}
+/* Category css end */
+/*     Shopping Cart     */
+ .btn-purchase{
+   text-align: center;
+   margin: auto;
+   padding: 2%;
+   width: 50%;
+ }
+ #shopping-cart{
+   padding: 5% 5%;
+ }
+ .cart-total{
+   text-align: right;
+   font-size: 1.3rem;
+ }
+.up-icon{
+   color: black;
+   position: fixed;
+   float: right;
+   z-index: 1;
+   left: 95%;
+   top: 85%;
+   font-size: 2rem;
+ }
+     /* Custom styles for the button */
+     .custom-btn {
+      color: #FFA500; /* Orange color for text */
+      background-color: #FFFFFF; /* White background */
+      border: 2px solid #FFA500; /* Orange border */
+    }
+    .custom-btn:hover {
+      background-color: #FFA500; /* Orange background on hover */
+      border-color: #FFA500; /* Orange border on hover */
+      color: #fff; /* White text on hover */
+    }
+        /* Custom styles for the button purchase*/
+        .custom-btnp {
+      color: white; /* Orange color for text */
+      background-color:#FFA500; /* White background */
+      border: 2px solid #FFA500; /* Orange border */
+    }
+    .custom-btnp:hover {
+      background-color: #fff; /* Orange background on hover */
+      border-color: #FFA500; /* Orange border on hover */
+      color: #FFA500; /* White text on hover */
+    }
+    /*     Shopping Cart End    */
+</style>
+</head>
+<!-----FontAwsome------>
+<script src="https://kit.fontawesome.com/9d9796826b.js" crossorigin="anonymous"></script>
+
+<body>
+<!---- Bootstrap Script---->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+  <!-- Nav Bar -->
+  <nav class="navbar navbar-expand-lg navbar-expand-md fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/index.html"><img src="./images/output-onlinegiftools.gif" alt="Logo" id="logo"></a>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src="./images/output-onlinegiftools.gif" alt="Logo" width="100%" height="150px"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2 active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2" href="product.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2" href="bootstrap-news-template/news.html">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <a href="login page.html" class="login-button">Login</a>
+      <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+  <!-- Nav bar end -->
+  <!-- Hero section -->
+  <section class="hero-section">
+    <div class="container d-flex align-items-center justify-content-center fs-1 text-white flex-column">
+      <h1><span style="color: orange;">P</span>roducts</h1>
+      <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Products</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+  <!-- Hero section end -->
+<!--Filter Button-->
+<div class = "filter-btns my-5">
+  <a href="product.html"><button type="button" class="filter-btn" id="refresh"><i class="fa-solid fa-rotate" ></i> Refresh</button></a>
+   
+  <button type = "button" class = "filter-btn" id = "all">all</button>
+  <button type = "button" class = "filter-btn" id = "new">Calanders</button>
+  <button type = "button" class = "filter-btn" id = "office-wear">Planners</button>
+  <button type = "button" class = "filter-btn" id = "t-shirts">Diaries/Note Books</button>
+  <button type = "button" class = "filter-btn" id = "offers">Other Items</button>
+</div>
+<hr style="color: #000; width: 80%; margin-left: 10%; margin-top: 10px;">
+
+<!--Product Cards-->
+<section id="product-cards">
+  <div class="container-fluid">
+    <div class="row row-cols-2 row-cols-md-4 g-4">
+      <div class=" col filter-item all new ">
+        <div class="card h-100">
+          <a href="product1.html"><img src="./images/product1.webp" class="card-img-top shop-item-image" alt="..."></a>
+          <div class="card-body">
+            <h5 class="card-title shop-item-title">Desk Delights: Stay Organized with Our Chic Table Calendar</h5>
+            <p class="card-text shop-item-price"> Rs 599.00</p>
+            <button type="button" style="width: 100%;" class="btn custom-btn mt-auto shop-item-button"><i class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class=" col filter-item all new">
+        <div class="card h-100">
+          <a href="product2.html"><img src="./images/product2.avif" class="card-img-top shop-item-image" alt="..."></a>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title shop-item-title">Pink Elegance: A Chic Desktop Calendar Experience</h5>
+            <p class="card-text shop-item-price"> Rs 799.00</p>
+            <button type="button" style="width: 100%;" class="btn custom-btn mt-auto shop-item-button"><i class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class=" col filter-item all new">
+        <div class="card h-100">
+          <a href="product3.html"><img src="./images/product3.avif" class="card-img-top shop-item-image" alt="..."></a>
+          <div class="card-body">
+            <h5 class="card-title shop-item-title">Wall Wonders: Stylish and Functional Wall Calendar</h5>
+            <p class="card-text shop-item-price"> Rs 850.00</p>
+            <button type="button" style="width: 100%;" class="btn custom-btn mt-auto shop-item-button"><i class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class=" col filter-item all new">
+        <div class="card h-100">
+          <a href="product4.html"><img src="./images/product4.avif" class="card-img-top shop-item-image " alt="..."></a>
+          <div class="card-body">
+            <h5 class="card-title shop-item-title">Timeless Treasures: A Stylish Wall Calendar for Every Moment.</h5>
+            <p class="card-text shop-item-price"> Rs 499.00</p>
+            <button type="button" style="width: 100%;" class="btn custom-btn mt-auto shop-item-button"><i class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class=" col filter-item all office-wear ">
+        <div class="card h-100">
+          <a href="product5.html"><img src="./images/product5.avif" class="card-img-top shop-item-image" alt="..."></a>
+          <div class="card-body">
+            <h5 class="card-title shop-item-title">Seven Days, Seven Wins: Your Goals, Your Weekly Planner.</h5>
+            <p class="card-text shop-item-price"> Rs 399.00</p>
+            <button type="button" style="width: 100%;" class="btn custom-btn mt-auto shop-item-button"><i class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class=" col filter-item all office-wear">
+        <div class="card h-100">
+          <a href="product6.html"><img src="./images/product6.avif"  class="card-img-top shop-item-image" alt="..."></a>
+          <div class="card-body">
+            <h5 class="card-title shop-item-title">Plan Panache: Conquer the Week with a Sleek Planner.</h5>
+            <p class="card-text shop-item-price">Rs 450.00</p>
+            <button type="button" style="width: 100%;" class="btn custom-btn mt-auto shop-item-button"><i class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To Cart</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class=" col filter-item all office-wear">
+        <div class="card h-100">
+          <a href="product7.html"><img src="./images/product7.webp" class="card-img-top shop-item-image" alt="..."></a>
+          <div class="card-body">
+            <h5 class="card-title shop-item-title">Fit Focus: Your Ultimate Workout Planner for Success.</h5>
+            <p class="card-text shop-item-price">Rs 380.00</p>
+            <button type="button" style="width: 100%;" class="btn custom-btn mt-auto shop-item-button"><i class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class=" col filter-item all office-wear">
+        <div class="card h-100">
+          <a href="product8.html"><img src="./images/product8.jpg" class="card-img-top shop-item-image" alt="..."></a>
+          <div class="card-body">
+            <h5 class="card-title shop-item-title">Savor & Succeed: Chart Your Path to a Balanced Life.</h5>
+            <p class="card-text shop-item-price">Rs 420.00</p>
+            <button type="button" style="width: 100%;" class="btn custom-btn mt-auto shop-item-button"><i class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class=" col filter-item all t-shirts">
+        <div class="card h-100">
+          <a href="product9.html"><img src="./images/product9.avif" class="card-img-top shop-item-image" alt="..."></a>
+          <div class="card-body">
+            <h5 class="card-title shop-item-title">Journal Journeys: Document Your Days with Our Diary.</h5>
+            <p class="card-text shop-item-price">Rs 799.00</p>
+            <button type="button" style="width: 100%;" class="btn custom-btn mt-auto shop-item-button"><i class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class=" col filter-item all t-shirts">
+        <div class="card h-100">
+          <a href="product10.html"><img src="./images/product10.avif" class="card-img-top shop-item-image" alt="..."></a>
+          <div class="card-body">
+            <h5 class="card-title shop-item-title">Diary Dreams: Where Your Imagination Meets the Page.</h5>
+            <p class="card-text shop-item-price">Rs 999.00</p>
+            <button type="button" style="width: 100%;" class="btn custom-btn mt-auto shop-item-button"><i class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class=" col filter-item all t-shirts">
+        <div class="card h-100">
+          <a href="product11.html"><img src="./images/product11.avif" class="card-img-top shop-item-image" alt="..."></a>
+          <div class="card-body">
+            <h5 class="card-title shop-item-title">Your Story, Your Style: Crafted Custom Diaries for You.</h5>
+            <p class="card-text shop-item-price">Rs 1299.00</p>
+            <button type="button" style="width: 100%;" class="btn custom-btn mt-auto shop-item-button"><i class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class=" col filter-item all t-shirts">
+        <div class="card h-100">
+          <a href="product12.html"><img src="./images/product12.avif" class="card-img-top shop-item-image" alt="..."></a>
+          <div class="card-body">
+            <h5 class="card-title shop-item-title">Page Perfect: Your Ideas, Dreams, Plans in Our Diary.</h5>
+            <p class="card-text shop-item-price">Rs 1599.00</p>
+            <button type="button" style="width: 100%;" class="btn custom-btn mt-auto shop-item-button"><i class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class=" col filter-item all offers">
+        <div class="card h-100">
+          <a href="product13.html"><img src="./images/product13.avif" class="card-img-top shop-item-image" alt="..."></a>
+          <div class="card-body">
+            <h5 class="card-title shop-item-title">Ink Innovations: Navigate Your Ideas with Precision.</h5>
+            <p class="card-text shop-item-price">Rs 550.00</p>
+            <button type="button" style="width: 100%;" class="btn custom-btn mt-auto shop-item-button"><i class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class=" col filter-item all offers">
+        <div class="card h-100">
+          <a href="product14.html"><img src="./images/product14.avif" class="card-img-top shop-item-image" alt="..."></a>
+          <div class="card-body">
+            <h5 class="card-title shop-item-title">Forest Finery: Explore Creativity with Wooden Pens.</h5>
+            <p class="card-text shop-item-price">Rs 1399.00</p>
+            <button type="button" style="width: 100%;" class="btn custom-btn mt-auto shop-item-button"><i class="fa-solid fa-cart-shopping  " style="margin-right: 4%;"></i>Add To Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class=" col filter-item all offers">
+        <div class="card h-100">
+          <a href="product15.html"><img src="./images/product15.avif" class="card-img-top shop-item-image" alt="..."></a>
+          <div class="card-body">
+            <h5 class="card-title shop-item-title">Sticky Chic: Organize Your World with Our Notes.</h5>
+            <p class="card-text shop-item-price">Rs 199.00</p>
+            <button type="button" style="width: 100%;" class="btn custom-btn mt-auto shop-item-button"><i class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class=" col filter-item all offers">
+        <div class="card h-100">
+          <a href="product16.html"><img src="./images/product16.avif" class="card-img-top shop-item-image" alt="..."></a>
+          <div class="card-body">
+            <h5 class="card-title shop-item-title">Desk Harmony: Uncluttered Living with Our Organizer.</h5>
+            <p class="card-text shop-item-price">Rs 5999.00</p>
+            <button type="button" style="width: 100%;" class="btn custom-btn mt-auto shop-item-button"><i class="fa-solid fa-cart-shopping " style="margin-right: 4%;"></i>Add To Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!--Product Cards End-->
+<hr style="color: #000; width: 80%; margin-left: 10%; margin-top: 10px;">
+<!--Shopping Cart-->
+<section class="container content-section" id="shopping-cart">
+  
+  <h3 style="text-decoration: underline;text-align: center; margin-bottom: 7%;">Shopping Cart</h3>
+ 
+ <table class="table table-hover table-cart">
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Price</th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
+  <tbody class="cart-items">
+    
+     
+  </tbody>
+</table>
+
+    <div class="cart-total"> 
+      <strong class="cart-total-title">Total</strong>
+      <span  class="cart-total-price" style="text-align: right;">$0</span>
+    </div>
+ 
+
+    <div class="btn-purchase" style="margin-top: 10%;">
+      <button type="button"  class="btn custom-btnp btn-purchase "><i class="fa-solid fa-cart-shopping " style="margin-right: 6%;"></i>PURCHASE</button>
+    </div>
+
+</section>
+ <!--Shopping Cart End-->
+<!--Footer-->
+<section id="footer">
+  <div class="card text-center">
+   
+    <div class="card-body">
+      <h3 class="card-title"><i class="fa-solid fa-gift" style="margin-right: 1%;"></i>Schedually</h3>
+      <p>Thank You , Come Again !!!</p>
+    </div>
+    <div class="card-footer text-muted">
+       <p></p>
+       <p></p>
+    </div>
+  </div>
+
+<!--Footer End-->
+ <!--FOOTER--> 
+ <hr class="mx-0 px-0">
+ <footer>
+     <div class="row justify-content-around mb-0 pt-5 pb-0">
+         <div class=" col-11">
+             <div class="row justify-content-center">
+                 <div class="col-md-3 col-12 font-italic align-items-center mt-md-3 mt-4">
+                     <h5>
+                       <a href="index.html"><span><h1 style="color: #FFA500;">Schedually</h1></span></a>
+                       <br>
+                       <!-- <b class="text-dark"> Key<span class="text-muted"> Pass</span></b> -->
+                     </h5>
+                     <p class="social mt-md-3 mt-2"> 
+                       <a href="https://www.facebook.com/">
+                         <i class="fa fa-facebook "></i>
+                       </a> 
+                       <a href="https://www.linkedin.com/">
+                           <i class="fa fa-linkedin "></i>
+                       </a> 
+                       <a href="https://www.twitter.com/">
+                           <i class="fa fa-twitter "></i>
+                       </a>  
+                     </p> 
+                     <small class="copy-rights cursor-pointer">Ⓒ 2023 CalendarsTeam <br>T2108M - Aptech North Karachi</small><br> 
+                     <small>Copyright.All Rights Resered. </small>
+                 </div>
+                 <div class="col-md-3 col-12 my-sm-0 mt-5">
+                     <ul class="list-unstyled">
+                         <li class="mt-md-3 mt-4" style="color: #FFA500;">INFORMATION</li>
+                         <li><a href="about.html">About Us</a></li>
+                         <li><a href="contact.html">Contact Us</a></li>
+                         <li><a href="about.html">Company</a></li>
+                         <li><a href="about.html">Our Teams</a></li>
+                     </ul>
+                 </div>
+                 <div class="col-md-3 col-12 my-sm-0 mt-5">
+                     <ul class="list-unstyled">
+                         <li class="mt-md-3 mt-4" style="color: #FFA500;">PRODUCTS</li>
+                         <li><a href="/product.html">Calendars</a></li>
+                         <li><a href="/product.html">Diaries</a></li>
+                         <li><a href="/product.html">Sales</a></li>
+                         <li><a href="/product.html">Best-selling</a></li>
+                     </ul>
+                 </div>
+                 <div class="col-xl-auto col-md-3 col-12 my-sm-0 mt-5">
+                     <ul class="list-unstyled">
+                         <li class="mt-md-3 mt-4" style="color: #FFA500;">CUSTOMER SERVICE</li>
+                         <li><a href="#">FAQs</a></li>
+                         <li><a href="#">Trust and safety</a></li>
+                         <li><a href="#">Privacy settings</a></li>
+                         <li><a href="#">Cookie Preferences</a></li>
+                     </ul>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </footer>
+</div>
+</div>
+<br><br>
+<hr>
+</section>
+</body>
+
+<script>
+  /* Image Filter Section */
+
+const allFilterItems = document.querySelectorAll('.filter-item');
+const allFilterBtns = document.querySelectorAll('.filter-btn');
+
+window.addEventListener('DOMContentLoaded', () => {
+    allFilterBtns[1].classList.add('active-btn');
+});
+
+allFilterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        showFilteredContent(btn);
+    });
+});
+
+function showFilteredContent(btn){
+    allFilterItems.forEach((item) => {
+        if(item.classList.contains(btn.id)){
+            resetActiveBtn();
+            btn.classList.add('active-btn');
+            item.style.display = "block";
+        } else {
+            item.style.display = "none";
+        }
+    });
+}
+
+function resetActiveBtn(){
+    allFilterBtns.forEach((btn) => {
+        btn.classList.remove('active-btn');
+    });
+}
+
+
+/* Shopping Cart Section */
+if (document.readyState == 'loading'){
+    document.addEventListener('DOMContentLoaded' , ready);
+}
+
+else{
+    ready();
+}
+
+
+ function ready(){
+    var removeCartItemButton = document.getElementsByClassName('btn-outline-danger');
+    for (var i = 0 ; i < removeCartItemButton.length; i++){
+        var button = removeCartItemButton[i];
+        button.addEventListener('click', removeCartItem)
+    }
+
+    var quantityInputs = document.getElementsByClassName('cart-quantity-input');
+    for(var i = 0 ;i < quantityInputs.length ; i++){
+        var input = quantityInputs[i];
+        input.addEventListener('change', quantityChanged);
+    }
+    
+    var addToCartButtons = document.getElementsByClassName('shop-item-button');
+    for(var i = 0; i< addToCartButtons.length; i++){
+        var button = addToCartButtons[i];
+        button.addEventListener('click',addToCartClicked)
+    }
+
+    document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
+ }
+
+
+ function purchaseClicked(){
+     alert('Thank you for your purchase!!!');
+     var cartItems = document.getElementsByClassName('cart-items')[0];
+     while(cartItems.hasChildNodes()){
+         cartItems.removeChild(cartItems.firstChild)
+     }
+     updateCartTotal();
+ }
+
+function removeCartItem(event){
+    var buttonClicked = event.target;
+    buttonClicked.parentElement.parentElement.remove();
+    updateCartTotal();
+    
+}
+
+function  quantityChanged(event){
+    var input = event.target;
+    if(isNaN(input.value) || input.value <= 0 ){
+        input.value = 1;
+    }
+    updateCartTotal();
+}
+
+
+function addToCartClicked(event){
+    var button = event.target;
+    var shopItem = button.parentElement.parentElement;
+    var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText;
+    var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText;
+    var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src;
+    addItemToCart(title,price,imageSrc);
+    updateCartTotal();
+}
+
+function addItemToCart(title, price, imageSrc){
+    var cartRow = document.createElement('tr');
+    cartRow.classList.add('cart-row');
+    var cartItems = document.getElementsByClassName('cart-items')[0];
+    var cartItemNames = cartItems.getElementsByClassName('cart-item-title');
+
+    for (i = 0; i< cartItemNames.length ; i++){
+        if(cartItemNames[i].innerText == title){
+            alert('This item already has added to the cart!');
+            return
+        }
+    }
+    var cartRowContents = ` 
+
+        <td class="cart-item cart-column">
+            <img class="cart-item-image" src="${imageSrc}" width="50" height="50">
+            <span class="cart-item-title">${title}</span>                  
+        </td>
+        <td class="cart-item cart-column">
+            <span class="cart-price cart-column">${price}</span>
+        </td>
+        <td class="cart-item cart-column">
+            <input class="cart-quantity-input" type="number" value="1" style="width: 50px">
+            <button class="btn btn-outline-danger" type="button">Remove</button>
+        </td>        
+    `;
+     
+            
+    cartRow.innerHTML = cartRowContents;
+    cartItems.append(cartRow);
+    cartRow.getElementsByClassName('btn-outline-danger')[0].addEventListener('click', removeCartItem);
+    cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
+}
+
+
+function updateCartTotal(){
+    var cartItemContainer = document.getElementsByClassName('cart-items')[0];
+    var cartRows = cartItemContainer.getElementsByClassName('cart-row');
+    var total = 0;
+    for (var i = 0 ; i< cartRows.length ; i++){
+        var cartRow =cartRows[i];
+        var priceElement = cartRow.getElementsByClassName('cart-price')[0];
+        var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0];
+        var price = parseFloat(priceElement.innerText.replace('Rs ' , ''))
+        var quantity = quantityElement.value;
+        total = total + (price * quantity);
+         
+    }
+    total = Math.round(total * 100 )/100;
+    document.getElementsByClassName('cart-total-price')[0].innerText = 'Rs '+ total + '.00';
+ 
+}
+</script>
+</html>

@@ -1,0 +1,1823 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Bootstrap News Template - Free HTML Templates</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Bootstrap News Template - Free HTML Templates" name="keywords">
+        <meta content="Bootstrap News Template - Free HTML Templates" name="description">
+
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet"> 
+
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="lib/slick/slick.css" rel="stylesheet">
+        <link href="lib/slick/slick-theme.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+        <style>
+            /**********************************/
+/********** General CSS ***********/
+/**********************************/
+body {
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    background: #ffffff;
+}
+
+/* Nav Bar css */
+      .navbar{
+        background-color: #fff;
+        height: 80px;
+        margin: 20px;
+        border-radius: 16px;
+        padding: 0.5rem;
+       position: absolute;
+      }
+      #logo {
+       margin-top: 4px;
+       margin-left: 0px;
+       width: 180px; /* Set an initial width */
+       height: auto; /* Maintain aspect ratio */
+            }
+     .login-button{
+        background-color: #ffa600dc ;
+        color: #fff;
+        font-size: 14px;
+        padding: 8px 20px;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: 0.3s backgroung-color;
+      }
+
+      .login-button:hover{
+        background-color: #ff9100;
+        color: #fff;
+      }
+
+      .navbar-toggler{
+        border: none;
+        font-size: 1.25rem;
+      }
+
+      .navbar-toggler:focus, .btn-close:focus{
+        box-shadow: none;
+        outline: none;
+      }
+
+      .nav-link{
+        color: #666777;
+        font-weight: 500;
+        position: relative;
+        font-size: 15px;
+      }
+
+      .nav-link:hover, .nav-link.active{
+        color: #000;
+      }
+      @media (max-width: 767px) {
+  #logo {
+    display: none; /* Hide the logo on mobile screens */
+  }
+
+  .login-button {
+    margin-right: 50%; /* Adjust the left margin for the login button */
+  }
+}
+      @media (min-width: 991px) {
+        .nav-link::before{
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100%;
+          height: 2px;
+          background-color: orange;
+          visibility: hidden;
+          transition: 0.3s ease-in-out;
+        }
+
+        .nav-link:hover::before, .nav-link:active::before{
+          width: 100%;
+          visibility: visible;
+        }
+    }
+     /* Nav bar css end */
+
+     /* Hero section css */
+     .hero-section{
+      background: url(./img/bg.jpeg) no-repeat center;
+      background-size: cover;
+      width: 100%;
+     
+     }
+
+     .hero-section::before{
+      background-color: rgba(0, 0, 0, 0.6);
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+     }
+
+     .hero-section .container{
+      height: 100vh;
+      z-index: 1;
+      position: relative;
+     }
+
+     .hero-section h1{
+      font-size: 1.5em;
+     }
+
+    
+     /* Breadcrumb */
+.breadcrumb {
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  list-style: none;
+  font-size: large;
+}
+
+.breadcrumb-item {
+  display: inline-block;
+}
+
+.breadcrumb-item a {
+  color: orange;
+  text-decoration: none;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+  content: '>';
+  margin: 0 5px;
+  color: #fff;
+}
+
+.breadcrumb-item.active {
+  color: #fff;
+}
+
+.blockquote{
+  color: orange;
+  font-size: 2em;
+}
+a {
+    color: #000;
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+a:hover,
+a:active,
+a:focus {
+    color: #000000;
+    outline: none;
+    text-decoration: none;
+}
+
+p {
+    padding: 0;
+    margin: 0 0 15px 0;
+    color: #000000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 15px 0;
+    padding: 0;
+    color: #000000;
+    font-weight: 600;
+}
+
+h4,
+h5,
+h6 {
+    font-weight: 400;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    background: #FFBF00;
+    color: #ffffff;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 1;
+    font-size: 16px;
+    right: 15px;
+    bottom: 15px;
+    transition: background 0.5s;
+    border-radius: 4px;
+    z-index: 11;
+}
+
+.back-to-top:hover {
+    background: #000000;
+}
+
+.back-to-top i {
+    padding-top: 9px;
+    color: #ffffff;
+}
+
+
+/**********************************/
+/********* Form Input CSS *********/
+/**********************************/
+.form-control,
+.custom-select {
+    width: 100%;
+    height: 35px;
+    padding: 5px 15px;
+    color: #999999;
+    border: 1px solid #cccccc;
+    margin-bottom: 15px
+}
+
+.form-control:focus,
+.custom-select:focus {
+    box-shadow: none;
+    border-color: #FFBF00;
+}
+
+.custom-radio,
+.custom-checkbox {
+    margin-bottom: 15px;
+}
+
+.custom-radio .custom-control-label::before,
+.custom-checkbox .custom-control-label::before {
+    border-color: #cccccc;
+}
+
+.custom-radio .custom-control-input:checked~.custom-control-label::before,
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    color: #ffffff;
+    background: #FFBF00;
+}
+
+button.btn {
+    color: #ffffff;
+    background: #000000;
+    border: 1px solid #000000;
+}
+
+button.btn:hover {
+    color: #ffffff;
+    background: #FFBF00;
+    border-color: #FFBF00;
+}
+
+
+
+
+/**********************************/
+/********** Top News CSS **********/
+/**********************************/
+.top-news {
+    position: relative;
+    width: 100%;
+    padding: 30px 0 0 0;
+}
+
+.top-news .tn-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.top-news .tn-img img {
+    width: 100%;
+}
+
+.top-news .tn-img:hover img {
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+}
+
+.top-news .tn-title {
+    position: absolute;
+    top: 0; 
+    right: 0;
+    bottom: 0; 
+    left: 0;
+    padding: 15px 10px 15px 20px;
+    background-image: linear-gradient(rgba(0, 0, 0, .0), rgba(0, 0, 0, .3), rgba(0, 0, 0, .9));
+    display: flex;
+    align-items: flex-end;
+}
+
+.top-news .tn-title a {
+    display: block;
+    width: 100%;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    transition: .3s;
+}
+
+.top-news .tn-left .tn-title a {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.top-news .tn-title a:hover {
+    color: #FFBF00;
+}
+
+.top-news .tn-left {
+    margin-bottom: 30px;
+}
+
+.top-news .tn-right {
+    margin-bottom: 60px;
+    padding: 0 30px;
+}
+
+.top-news .tn-right .col-md-6 {
+    padding: 0;
+}
+
+.top-news .slick-prev,
+.top-news .slick-next {
+    width: 28px;
+    height: 28px;
+    z-index: 1;
+    transition: .5s;
+    color: #ffffff;
+    background: #000000;
+    border-radius: 4px;
+}
+
+.top-news .slick-prev {
+    left: 30px;
+}
+
+.top-news .slick-next {
+    right: 30px;
+}
+
+.top-news .slick-prev:hover,
+.top-news .slick-prev:focus,
+.top-news .slick-next:hover,
+.top-news .slick-next:focus {
+    color: #ffffff;
+    background: #FFBF00;
+}
+
+.top-news .slick-prev::before,
+.top-news .slick-next::before {
+    font-family: "Font Awesome 5 Free";
+    font-size: 18px;
+    font-weight: 900;
+    color: #ffffff;
+}
+
+.top-news .slick-prev::before {
+    content: "\f104";
+}
+
+.top-news .slick-next::before {
+    content: "\f105";
+}
+
+
+/**********************************/
+/******* Category News CSS ********/
+/**********************************/
+.cat-news {
+    position: relative;
+    width: 100%;
+    padding: 0;
+}
+
+.cat-news .col-md-6 {
+    margin-bottom: 30px;
+}
+
+.cat-news h2 {
+    color: #000000;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 3px double #000000;
+}
+
+.cat-news .cn-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.cat-news .cn-img img {
+    width: 100%;
+}
+
+.cat-news .cn-img:hover img {
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+}
+
+.cat-news .cn-title {
+    position: absolute;
+    top: 0; 
+    right: 0;
+    bottom: 0; 
+    left: 0;
+    padding: 15px 10px 15px 20px;
+    background-image: linear-gradient(rgba(0, 0, 0, .0), rgba(0, 0, 0, .3), rgba(0, 0, 0, .9));
+    display: flex;
+    align-items: flex-end;
+}
+
+.cat-news .cn-title a {
+    display: block;
+    width: 100%;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    transition: .3s;
+}
+
+.cat-news .cn-title a:hover {
+    color: #FFBF00;
+}
+
+.cat-news .slick-prev,
+.cat-news .slick-next {
+    top: -62px;
+    width: 28px;
+    height: 28px;
+    z-index: 1;
+    transition: .5s;
+    color: #ffffff;
+    background: #000000;
+    border-radius: 4px;
+}
+
+.cat-news .slick-prev {
+    left: calc(100% - 85px);
+}
+
+.cat-news .slick-next {
+    right: 14px;
+}
+
+.cat-news .slick-prev:hover,
+.cat-news .slick-prev:focus,
+.cat-news .slick-next:hover,
+.cat-news .slick-next:focus {
+    color: #ffffff;
+    background: #FFBF00;
+}
+
+.cat-news .slick-prev::before,
+.cat-news .slick-next::before {
+    font-family: "Font Awesome 5 Free";
+    font-size: 18px;
+    font-weight: 900;
+    color: #ffffff;
+}
+
+.cat-news .slick-prev::before {
+    content: "\f104";
+}
+
+.cat-news .slick-next::before {
+    content: "\f105";
+}
+
+
+/**********************************/
+/********** Tab News CSS **********/
+/**********************************/
+.tab-news {
+    position: relative;
+}
+
+.tab-news .col-md-6 {
+    margin-bottom: 60px;
+}
+
+.tab-news .nav.nav-pills .nav-link {
+    color: #ffffff;
+    background: #000000;
+    border-radius: 0;
+}
+
+.tab-news .nav.nav-pills .nav-link:hover,
+.tab-news .nav.nav-pills .nav-link.active {
+    color: #ffffff;
+    background: #FFBF00;
+}
+
+.tab-news .tab-content {
+    padding: 30px 15px 15px 15px;
+    background: rgba(0, 0, 0, .05);
+}
+
+.tab-news .tn-news {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    background: #ffffff;
+}
+
+.tab-news .tn-img {
+    width: 150px;
+}
+
+.tab-news .tn-img img {
+    width: 150px;
+}
+
+.tab-news .tn-title {
+    padding: 10px 15px;
+}
+
+.tab-news .tn-title a {
+    color: #000000;
+    font-size: 18px;
+    font-weight: 400;
+    transition: all .3s;
+}
+
+.tab-news .tn-title a:hover {
+    color: #FFBF00;
+}
+
+
+
+/**********************************/
+/********** Main News CSS *********/
+/**********************************/
+.main-news {
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.main-news .col-md-4 {
+    margin-bottom: 30px;
+}
+
+.main-news .mn-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.main-news .mn-img img {
+    width: 100%;
+}
+
+.main-news .mn-img:hover img {
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+}
+
+.main-news .mn-title {
+    position: absolute;
+    top: 0; 
+    right: 0;
+    bottom: 0; 
+    left: 0;
+    padding: 15px 10px 15px 20px;
+    background-image: linear-gradient(rgba(0, 0, 0, .0), rgba(0, 0, 0, .3), rgba(0, 0, 0, .9));
+    display: flex;
+    align-items: flex-end;
+}
+
+.main-news .mn-title a {
+    display: block;
+    width: 100%;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    transition: .3s;
+}
+
+.main-news .mn-title a:hover {
+    color: #FFBF00;
+}
+
+.main-news .mn-list {
+    margin-bottom: 30px;
+}
+
+.main-news .mn-list h2 {
+    color: #000000;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 3px double #000000;
+}
+
+.main-news .mn-list ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.main-news .mn-list ul li {
+    margin: 0 0 12px 22px; 
+}
+
+.main-news .mn-list ul li:last-child {
+    margin-bottom: 0; 
+}
+
+.main-news .mn-list ul li a {
+    color: #000000;
+    display: block;
+    line-height: 23px;
+}
+
+.main-news .mn-list ul li::before {
+    position: absolute;
+    content: '\f061';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #000000;
+    left: 1px;
+}
+
+.main-news .mn-list ul li a:hover {
+    color: #FFBF00;
+}
+
+
+/**********************************/
+/********* Breadcrumb CSS *********/
+/**********************************/
+.breadcrumb-wrap {
+    position: relative;
+    width: 100%;
+    background: #ffffff;
+}
+
+.breadcrumb-wrap .breadcrumb {
+    margin: 25px 0 0 0;
+    padding: 0;
+    background: none;
+}
+
+.breadcrumb-wrap .breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+    color: #353535;
+}
+
+.breadcrumb-wrap .breadcrumb .breadcrumb-item.active {
+    color: #353535;
+}
+
+
+/**********************************/
+/********* Single News CSS ********/
+/**********************************/
+.single-news {
+    position: relative;
+    width: 100%;
+    padding: 25px 0 0 0;
+    margin-bottom: 15px;
+}
+
+.single-news .sn-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.single-news .sn-img img {
+    width: 100%;
+}
+
+.single-news .sn-content {
+    position: relative;
+    width: 100%;
+    padding: 30px 0;
+}
+
+.single-news .sn-content h1.sn-title {
+    display: block;
+    width: 100%;
+    color: #000000;
+}
+
+.single-news .sn-related {
+    margin-bottom: 45px;
+}
+
+.single-news .sn-related h2 {
+    color: #000000;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 3px double #000000;
+}
+
+.single-news .sn-slider .sn-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.single-news .sn-slider .sn-img img {
+    width: 100%;
+}
+
+.single-news .sn-slider .sn-img:hover img {
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+}
+
+.single-news .sn-slider .sn-title {
+    position: absolute;
+    top: 0; 
+    right: 0;
+    bottom: 0; 
+    left: 0;
+    padding: 15px 10px 15px 20px;
+    background-image: linear-gradient(rgba(0, 0, 0, .0), rgba(0, 0, 0, .3), rgba(0, 0, 0, .9));
+    display: flex;
+    align-items: flex-end;
+}
+
+.single-news .sn-slider .sn-title a {
+    display: block;
+    width: 100%;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    transition: .3s;
+}
+
+.single-news .sn-slider .sn-title a:hover {
+    color: #FFBF00;
+}
+
+.single-news .sn-slider .slick-prev,
+.single-news .sn-slider .slick-next {
+    top: -62px;
+    width: 28px;
+    height: 28px;
+    z-index: 1;
+    transition: .5s;
+    color: #ffffff;
+    background: #000000;
+    border-radius: 4px;
+}
+
+.single-news .sn-slider .slick-prev {
+    left: calc(100% - 85px);
+}
+
+.single-news .sn-slider .slick-next {
+    right: 14px;
+}
+
+.single-news .sn-slider .slick-prev:hover,
+.single-news .sn-slider .slick-prev:focus,
+.single-news .sn-slider .slick-next:hover,
+.single-news .sn-slider .slick-next:focus {
+    color: #ffffff;
+    background: #FFBF00;
+}
+
+.single-news .sn-slider .slick-prev::before,
+.single-news .sn-slider .slick-next::before {
+    font-family: "Font Awesome 5 Free";
+    font-size: 18px;
+    font-weight: 900;
+    color: #ffffff;
+}
+
+.single-news .sn-slider .slick-prev::before {
+    content: "\f104";
+}
+
+.single-news .sn-slider .slick-next::before {
+    content: "\f105";
+}
+
+
+/**********************************/
+/*********** Sidebar CSS **********/
+/**********************************/
+.sidebar {
+    position: relative;
+    width: 100%;
+}
+
+.sidebar .sidebar-widget {
+    position: relative;
+    width: 100%;
+    margin-bottom: 45px;
+}
+
+.sidebar .sidebar-widget h2.sw-title {
+    color: #000000;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 3px double #000000;
+}
+
+.sidebar .sidebar-widget .news-list {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.sidebar .news-list .nl-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.sidebar .news-list .nl-item .nl-img {
+    width: 100px;
+}
+
+.sidebar .news-list .nl-item .nl-img img {
+    width: 100px;
+}
+
+.sidebar .news-list .nl-item .nl-title {
+    padding-left: 15px;
+}
+
+.sidebar .news-list .nl-item .nl-title a {
+    color: #000000;
+    font-size: 16px;
+    font-weight: 400;
+    transition: all .3s;
+}
+
+.sidebar .news-list .nl-item .nl-title a:hover {
+    color: #FFBF00;
+}
+
+.sidebar .sidebar-widget .tab-news {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.sidebar .tab-news .nav.nav-pills .nav-link {
+    color: #ffffff;
+    background: #000000;
+    border-radius: 0;
+}
+
+.sidebar .tab-news .nav.nav-pills .nav-link:hover,
+.sidebar .tab-news .nav.nav-pills .nav-link.active {
+    color: #ffffff;
+    background: #FFBF00;
+}
+
+.sidebar .tab-news .tab-content {
+    padding: 15px 0 0 0;
+    background: transparent;
+}
+
+.sidebar .tab-news .tab-content .container {
+    padding: 0;
+}
+
+.sidebar .tab-news .tn-news {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.sidebar .tab-news .tn-img {
+    width: 100px;
+}
+
+.sidebar .tab-news .tn-img img {
+    width: 100px;
+}
+
+.sidebar .tab-news .tn-title {
+    padding: 0 0 0 15px;
+}
+
+.sidebar .tab-news .tn-title a {
+    color: #000000;
+    font-size: 16px;
+    font-weight: 400;
+    transition: all .3s;
+}
+
+.sidebar .tab-news .tn-title a:hover {
+    color: #FFBF00;
+}
+
+.sidebar .sidebar-widget .category {
+    position: relative;
+}
+
+.sidebar .category ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar .category ul li {
+    margin: 0 0 12px 22px; 
+}
+
+.sidebar .category ul li:last-child {
+    margin-bottom: 0; 
+}
+
+.sidebar .category ul li a {
+    display: inline-block;
+    color: #000000;
+    line-height: 23px;
+}
+
+.sidebar .category ul li a:hover {
+    color: #FFBF00;
+}
+
+.sidebar .category ul li::before {
+    position: absolute;
+    content: '\f061';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #000000;
+    left: 1px;
+}
+
+.sidebar .category ul li span {
+    display: inline-block;
+    float: right;
+}
+
+.sidebar .sidebar-widget .tags {
+    position: relative;
+}
+
+.sidebar .sidebar-widget .tags a {
+    display: inline-block;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    color: #000000;
+    background: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 4px;
+}
+
+.sidebar .sidebar-widget .tags a:hover {
+    color: #ffffff;
+    background: #FFBF00;
+    border: 1px solid #FFBF00;
+}
+
+.sidebar .sidebar-widget .image a {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+
+.sidebar .sidebar-widget .image img {
+    max-width: 100%;
+    transition: .3s;
+}
+
+.sidebar .sidebar-widget .image img:hover {
+    transform: scale(1.1);
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+}
+
+
+/**********************************/
+/********** Contact CSS ***********/
+/**********************************/
+.contact {
+    position: relative;
+    padding: 25px 0 15px 0;
+}
+
+.contact .contact-form,
+.contact .contact-info {
+    margin-bottom: 45px;
+}
+
+.contact .contact-info h4 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.contact .contact-info h4 i {
+    color: #000000;
+    margin-right: 5px;
+}
+
+.contact .social {
+    position: relative;
+    width: 100%;
+}
+
+.contact .social a {
+    display: inline-block;
+    margin: 10px 10px 0 0;
+    width: 40px;
+    height: 40px;
+    padding: 7px 0;
+    text-align: center;
+    font-size: 18px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+}
+
+.contact .social a i {
+    color: #000000;
+}
+
+.contact .social a:hover {
+    background: #FFBF00;
+    border-color: #FFBF00;
+}
+
+.contact .social a:hover i {
+    color: #ffffff;
+}
+
+
+
+        </style>
+    </head>
+
+    <body>
+      <!-- Nav Bar -->
+  <nav class="navbar navbar-expand-lg navbar-expand-md fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/index.html"><img src="./img/output-onlinegiftools.gif" alt="Logo" id="logo"></a>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src="./img//output-onlinegiftools.gif" alt="Logo" width="100%" height="150px"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2 active" aria-current="page" href="/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2" href="/about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2" href="/product.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2" href="/bootstrap-news-template/news.html">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2" href="/contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <a href="/login page.html" class="login-button">Login</a>
+      <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+  <!-- Nav bar end -->
+
+  <!-- Hero section -->
+  <section class="hero-section">
+    <div class="container d-flex align-items-center justify-content-center fs-1 text-white flex-column">
+      <h1 style="color: #fff;"><span style="color: orange;">N</span>ews</h1>
+      <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Library</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+  <!-- Hero section end -->
+
+        <!-- Top News Start-->
+        <div class="top-news">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 tn-left">
+                        <div class="row tn-slider">
+                            <div class="col-md-6">
+                                <div class="tn-img">
+                                    <img src="img/news-450x350-1.jpg" />
+                                    <div class="tn-title">
+                                        <a href="https://www.bbc.com/worklife/tags/work-culture">The seven biggest work trends of 2023</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="tn-img">
+                                    <img src="img/news-450x350-2.jpg" />
+                                    <div class="tn-title">
+                                        <a  href="https://www.bbc.com/worklife/article/20231218-five-cautionary-tales-of-business-leadership-in-2023">Five cautionary tales of business leadership in 2023</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 tn-right">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="tn-img">
+                                    <img src="img/news-350x223-1.jpg" />
+                                    <div class="tn-title">
+                                        <a href="https://www.bbc.com/travel/article/20230522-the-dutch-solution-to-busyness-that-captivated-the-world">The Dutch solution to stress</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="tn-img">
+                                    <img src="img/news-350x223-2.jpg" />
+                                    <div class="tn-title">
+                                        <a href="https://www.bbc.com/travel/article/20200510-japans-formula-for-life-satisfaction">Japan's formula for life satisfaction</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="tn-img">
+                                    <img src="img/news-350x223-3.jpg" />
+                                    <div class="tn-title">
+                                        <a href="https://www.bbc.co.uk/programmes/m0018wz5">Schools Apart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="tn-img">
+                                    <img src="img/news-350x223-4.jpg" />
+                                    <div class="tn-title">
+                                        <a href="https://www.bbc.co.uk/programmes/p0cs0k24">Gardening for Schools</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Top News End-->
+
+        <!-- Category News Start-->
+        <div class="cat-news">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>Sports</h2>
+                        <div class="row cn-slider">
+                            <div class="col-md-6">
+                                <div class="cn-img">
+                                    <img src="img/sports.webp" />
+                                    <div class="cn-title">
+                                        <a href="https://www.bbc.com/sport/darts/67849359">PDC World Championship 2024</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="cn-img">
+                                    <img src="img/sports2.jpg" />
+                                    <div class="cn-title">
+                                        <a href="https://www.bbc.com/sport/football/67809578">City chasing more glory in 2024</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="cn-img">
+                                    <img src="img/sports3.jpg" />
+                                    <div class="cn-title">
+                                        <a href="https://www.bbc.com/sport/football/67851068">Rabiot latched onto a flick</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h2>Earth</h2>
+                        <div class="row cn-slider">
+                            <div class="col-md-6">
+                                <div class="cn-img">
+                                    <img src="img/Earth.webp" />
+                                    <div class="cn-title">
+                                        <a href="https://www.bbc.com/future/article/20231219-how-reindeer-help-fight-climate-change">FUTURE PLANET</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="cn-img">
+                                    <img src="img/Earth2.webp" />
+                                    <div class="cn-title">
+                                        <a href="https://www.bbc.com/future/article/20231214-how-new-zealand-is-reducing-methane-emissions-from-farming">TOWARDS NET ZERO
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="cn-img">
+                                    <img src="img/Earth3.webp" />
+                                    <div class="cn-title">
+                                        <a href="https://www.bbc.com/future/article/20231220-why-oulu-finland-is-the-winter-cycling-capital-of-the-world">The winter cycling capital of the world</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Category News End-->
+
+        <!-- Category News Start-->
+        <div class="cat-news">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>Business</h2>
+                        <div class="row cn-slider">
+                            <div class="col-md-6">
+                                <div class="cn-img">
+                                    <img src="img/business.jpg" />
+                                    <div class="cn-title">
+                                        <a href="https://www.bbc.com/news/av/business-38771556">What will the jobs of the future look like?</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="cn-img">
+                                    <img src="img/business2.jpg" />
+                                    <div class="cn-title">
+                                        <a href="https://www.bbc.com/news/av/business-37384174">The gig economy: Opportunity or threat?</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="cn-img">
+                                    <img src="img/business3.jpg" />
+                                    <div class="cn-title">
+                                        <a href="https://www.bbc.com/news/av/business-36803059">How close are we to automated manufacturing?</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h2>Entertainment</h2>
+                        <div class="row cn-slider">
+                            <div class="col-md-6">
+                                <div class="cn-img">
+                                    <img src="img/entertainment.webp" />
+                                    <div class="cn-title">
+                                        <a href="https://www.bbc.com/news/articles/cgxkd488151o">Diwali event an'explosion of entertainment'</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="cn-img">
+                                    <img src="img/entertainment2.webp" />
+                                    <div class="cn-title">
+                                        <a href="https://www.bbc.com/news/entertainment-arts-65765517">Gollum: Game mocked as developers</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="cn-img">
+                                    <img src="img/entertainment3.webp" />
+                                    <div class="cn-title">
+                                        <a href="https://www.bbc.com/news/entertainment-arts-64220508">Harry Styles and Top Gun Maverick</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Category News End-->
+        
+        <!-- Tab News Start-->
+        <div class="tab-news">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="nav nav-pills nav-justified">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="pill" href="#featured">Featured News</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#popular">Popular News</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#latest">Latest News</a>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div id="featured" class="container tab-pane active">
+                                <div class="tn-news">
+                                    <div class="tn-img">
+                                        <img src="img/news-350x223-1.jpg" />
+                                    </div>
+                                    <div class="tn-title">
+                                        <a href="https://www.bbc.com/travel/article/20230522-the-dutch-solution-to-busyness-that-captivated-the-world">The Dutch solution to stress</a>
+                                    </div>
+                                </div>
+                                <div class="tn-news">
+                                    <div class="tn-img">
+                                        <img src="img/news-350x223-2.jpg" />
+                                    </div>
+                                    <div class="tn-title">
+                                        <a href="https://www.bbc.com/travel/article/20200510-japans-formula-for-life-satisfaction">Japan's formula for life satisfaction</a>
+                                    </div>
+                                </div>
+                                <div class="tn-news">
+                                    <div class="tn-img">
+                                        <img src="img/news-350x223-3.jpg" />
+                                    </div>
+                                    <div class="tn-title">
+                                        <a href="https://www.bbc.co.uk/programmes/m0018wz5">Schools Apart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="popular" class="container tab-pane fade">
+                                <div class="tn-news">
+                                    <div class="tn-img">
+                                        <img src="img/news-350x223-4.jpg" />
+                                    </div>
+                                    <div class="tn-title">
+                                        <a href="https://www.bbc.co.uk/programmes/p0cs0k24">Gardening for Schools</a>
+                                    </div>
+                                </div>
+                                <div class="tn-news">
+                                    <div class="tn-img">
+                                        <img src="img/news-350x223-5.jpg" />
+                                    </div>
+                                    <div class="tn-title">
+                                        <a href="https://www.bbc.co.uk/programmes/p00rwj8m">Eye To Eye</a>
+                                    </div>
+                                </div>
+                                <div class="tn-news">
+                                    <div class="tn-img">
+                                        <img src="img/news-350x223-1.jpg" />
+                                    </div>
+                                    <div class="tn-title">
+                                        <a href="https://www.bbc.com/travel/article/20230522-the-dutch-solution-to-busyness-that-captivated-the-world">The Dutch solution to stress</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="latest" class="container tab-pane fade">
+                                <div class="tn-news">
+                                    <div class="tn-img">
+                                        <img src="img/news-350x223-2.jpg" />
+                                    </div>
+                                    <div class="tn-title">
+                                        <a href="https://www.bbc.com/travel/article/20200510-japans-formula-for-life-satisfaction">Japan's formula for life satisfaction</a>
+                                    </div>
+                                </div>
+                                <div class="tn-news">
+                                    <div class="tn-img">
+                                        <img src="img/news-350x223-3.jpg" />
+                                    </div>
+                                    <div class="tn-title">
+                                        <a href="https://www.bbc.co.uk/programmes/m0018wz5">Schools Apart</a>
+                                    </div>
+                                </div>
+                                <div class="tn-news">
+                                    <div class="tn-img">
+                                        <img src="img/news-350x223-4.jpg" />
+                                    </div>
+                                    <div class="tn-title">
+                                        <a href="https://www.bbc.co.uk/programmes/p0cs0k24">Gardening for Schools</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <ul class="nav nav-pills nav-justified">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="pill" href="#m-viewed">Most Viewed</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#m-read">Most Read</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#m-recent">Most Recent</a>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div id="m-viewed" class="container tab-pane active">
+                                <div class="tn-news">
+                                    <div class="tn-img">
+                                        <img src="img/news-350x223-5.jpg" />
+                                    </div>
+                                    <div class="tn-title">
+                                        <a href="https://www.bbc.co.uk/programmes/p00rwj8m">Eye To Eye</a>
+                                    </div>
+                                </div>
+                                <div class="tn-news">
+                                    <div class="tn-img">
+                                        <img src="img/news-350x223-4.jpg" />
+                                    </div>
+                                    <div class="tn-title">
+                                        <a href="https://www.bbc.co.uk/programmes/p0cs0k24">Gardening for Schools</a>
+                                    </div>
+                                </div>
+                                <div class="tn-news">
+                                    <div class="tn-img">
+                                        <img src="img/news-350x223-3.jpg" />
+                                    </div>
+                                    <div class="tn-title">
+                                        <a href="https://www.bbc.co.uk/programmes/m0018wz5">Schools Apart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="m-read" class="container tab-pane fade">
+                                <div class="tn-news">
+                                    <div class="tn-img">
+                                        <img src="img/news-350x223-2.jpg" />
+                                    </div>
+                                    <div class="tn-title">
+                                        <a href="https://www.bbc.com/travel/article/20200510-japans-formula-for-life-satisfaction">Japan's formula for life satisfaction</a>
+                                    </div>
+                                </div>
+                                <div class="tn-news">
+                                    <div class="tn-img">
+                                        <img src="img/news-350x223-1.jpg" />
+                                    </div>
+                                    <div class="tn-title">
+                                        <a href="https://www.bbc.com/travel/article/20230522-the-dutch-solution-to-busyness-that-captivated-the-world">The Dutch solution to stress</a>
+                                    </div>
+                                </div>
+                                <div class="tn-news">
+                                    <div class="tn-img">
+                                        <img src="img/news-350x223-3.jpg" />
+                                    </div>
+                                    <div class="tn-title">
+                                        <a href="https://www.bbc.co.uk/programmes/m0018wz5">Schools Apart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="m-recent" class="container tab-pane fade">
+                                <div class="tn-news">
+                                    <div class="tn-img">
+                                        <img src="img/news-350x223-4.jpg" />
+                                    </div>
+                                    <div class="tn-title">
+                                        <a href="https://www.bbc.co.uk/programmes/p0cs0k24">Gardening for Schools</a>
+                                    </div>
+                                </div>
+                                <div class="tn-news">
+                                    <div class="tn-img">
+                                        <img src="img/news-350x223-5.jpg" />
+                                    </div>
+                                    <div class="tn-title">
+                                        <a href="https://www.bbc.co.uk/programmes/p00rwj8m">Eye To Eye</a>
+                                    </div>
+                                </div>
+                                <div class="tn-news">
+                                    <div class="tn-img">
+                                        <img src="img/news-350x223-1.jpg" />
+                                    </div>
+                                    <div class="tn-title">
+                                        <a href="https://www.bbc.com/travel/article/20230522-the-dutch-solution-to-busyness-that-captivated-the-world">The Dutch solution to stress</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Tab News Start-->
+
+        <!-- Main News Start-->
+        <div class="main-news">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mn-img">
+                                    <img src="img/news-350x223-1.jpg" />
+                                    <div class="mn-title">
+                                        <a href="https://www.bbc.com/travel/article/20230522-the-dutch-solution-to-busyness-that-captivated-the-world">The Dutch solution to stress</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mn-img">
+                                    <img src="img/news-350x223-2.jpg" />
+                                    <div class="mn-title">
+                                        <a href="https://www.bbc.com/travel/article/20200510-japans-formula-for-life-satisfaction">Japan's formula for life satisfaction</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mn-img">
+                                    <img src="img/news-350x223-3.jpg" />
+                                    <div class="mn-title">
+                                        <a href="https://www.bbc.co.uk/programmes/m0018wz5">Schools Apart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mn-img">
+                                    <img src="img/news-350x223-4.jpg" />
+                                    <div class="mn-title">
+                                        <a href="https://www.bbc.co.uk/programmes/p0cs0k24">Gardening for Schools</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mn-img">
+                                    <img src="img/news-350x223-5.jpg" />
+                                    <div class="mn-title">
+                                        <a href="https://www.bbc.co.uk/programmes/p00rwj8m">Eye To Eye</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mn-img">
+                                    <img src="img/news-350x223-1.jpg" />
+                                    <div class="mn-title">
+                                        <a href="https://www.bbc.com/travel/article/20230522-the-dutch-solution-to-busyness-that-captivated-the-world">The Dutch solution to stress</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mn-img">
+                                    <img src="img/news-350x223-2.jpg" />
+                                    <div class="mn-title">
+                                        <a href="https://www.bbc.com/travel/article/20200510-japans-formula-for-life-satisfaction">Japan's formula for life satisfaction</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mn-img">
+                                    <img src="img/news-350x223-3.jpg" />
+                                    <div class="mn-title">
+                                        <a href="https://www.bbc.co.uk/programmes/m0018wz5">Schools Apart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mn-img">
+                                    <img src="img/news-350x223-4.jpg" />
+                                    <div class="mn-title">
+                                        <a href="https://www.bbc.co.uk/programmes/p0cs0k24">Gardening for Schools</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="mn-list">
+                            <h2>Read More</h2>
+                            <ul>
+                                <li><a  href="https://www.bbc.com/worklife/article/20231218-five-cautionary-tales-of-business-leadership-in-2023">Five cautionary tales of business leadership in 2023</a></li>
+                                <li><a href="https://www.bbc.com/sport/football/67809578">City chasing more glory in 2024</a></li>
+                                <li><a href="https://www.bbc.com/news/av/business-38771556">What will the jobs of the future look like?</a></li>
+                                <li><a href="https://www.bbc.com/news/av/business-37384174">The gig economy: Opportunity or threat?</a></li>
+                                <li><a href="https://www.bbc.com/news/av/business-36803059">How close are we to automated manufacturing?</a></li>
+                                <li><a href="https://www.bbc.com/news/entertainment-arts-65765517">Gollum: Game mocked as developers</a></li>
+                                <li><a href="https://www.bbc.com/news/entertainment-arts-64220508">Harry Styles and Top Gun Maverick</a></li>
+                                <li><a href="https://www.bbc.com/worklife/tags/work-culture">The seven biggest work trends of 2023</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main News End-->
+
+    
+
+        <!-- Back to Top -->
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+        <!--FOOTER--> 
+            <hr class="mx-0 px-0">
+            <footer>
+                <div class="row justify-content-around mb-0 pt-5 pb-0">
+                    <div class=" col-11">
+                        <div class="row justify-content-center">
+                            <div class="col-md-3 col-12 font-italic align-items-center mt-md-3 mt-4">
+                                <h5>
+                                  <a href="index.html"><span><h1 style="color: #FFA500;">Schedually</h1></span></a>
+                                  <br>
+                                  <!-- <b class="text-dark"> Key<span class="text-muted"> Pass</span></b> -->
+                                </h5>
+                                <p class="social mt-md-3 mt-2"> 
+                                  <a href="https://www.facebook.com/">
+                                    <i class="fa fa-facebook "></i>
+                                  </a> 
+                                  <a href="https://www.linkedin.com/">
+                                      <i class="fa fa-linkedin "></i>
+                                  </a> 
+                                  <a href="https://www.twitter.com/">
+                                      <i class="fa fa-twitter "></i>
+                                  </a>  
+                                </p> 
+                                <small class="copy-rights cursor-pointer">Ⓒ 2023 CalendarsTeam <br>T2108M - Aptech North Karachi</small><br> 
+                                <small>Copyright.All Rights Resered. </small>
+                            </div>
+                            <div class="col-md-3 col-12 my-sm-0 mt-5">
+                                <ul class="list-unstyled">
+                                    <li class="mt-md-3 mt-4" style="color: #FFA500;">INFORMATION</li>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li><a href="about.html">Company</a></li>
+                                    <li><a href="about.html">Our Teams</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-3 col-12 my-sm-0 mt-5">
+                                <ul class="list-unstyled">
+                                    <li class="mt-md-3 mt-4" style="color: #FFA500;">PRODUCTS</li>
+                                    <li><a href="/product.html">Calendars</a></li>
+                                    <li><a href="/product.html">Diaries</a></li>
+                                    <li><a href="product.html">Sales</a></li>
+                                    <li><a href="product.html">Best-selling</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-xl-auto col-md-3 col-12 my-sm-0 mt-5">
+                                <ul class="list-unstyled">
+                                    <li class="mt-md-3 mt-4" style="color: #FFA500;">CUSTOMER SERVICE</li>
+                                    <li><a href="#">FAQs</a></li>
+                                    <li><a href="#">Trust and safety</a></li>
+                                    <li><a href="#">Privacy settings</a></li>
+                                    <li><a href="#">Cookie Preferences</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+      </div>
+      <br><br>
+    <hr>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/slick/slick.min.js"></script>
+
+        <!-- Template Javascript -->
+        <script>
+            (function ($) {
+    "use strict";
+    
+    // // Sticky Navbar
+    // $(window).scroll(function () {
+    //     if ($(this).scrollTop() > 150) {
+    //         $('.nav-bar').addClass('nav-sticky');
+    //     } else {
+    //         $('.nav-bar').removeClass('nav-sticky');
+    //     }
+    // });
+    
+    
+    // Dropdown on mouse hover
+    // $(document).ready(function () {
+    //     function toggleNavbarMethod() {
+    //         if ($(window).width() > 768) {
+    //             $('.navbar .dropdown').on('mouseover', function () {
+    //                 $('.dropdown-toggle', this).trigger('click');
+    //             }).on('mouseout', function () {
+    //                 $('.dropdown-toggle', this).trigger('click').blur();
+    //             });
+    //         } else {
+    //             $('.navbar .dropdown').off('mouseover').off('mouseout');
+    //         }
+    //     }
+    //     toggleNavbarMethod();
+    //     $(window).resize(toggleNavbarMethod);
+    // });
+    
+    
+    // Back to top button
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            $('.back-to-top').fadeIn('slow');
+        } else {
+            $('.back-to-top').fadeOut('slow');
+        }
+    });
+    $('.back-to-top').click(function () {
+        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        return false;
+    });
+    
+    
+    // Top News Slider
+    $('.tn-slider').slick({
+        autoplay: true,
+        infinite: true,
+        dots: false,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    });
+    
+    
+    // Category News Slider
+    $('.cn-slider').slick({
+        autoplay: false,
+        infinite: true,
+        dots: false,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 1
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+    
+    
+    // Related News Slider
+    $('.sn-slider').slick({
+        autoplay: false,
+        infinite: true,
+        dots: false,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+})(jQuery);
+
+
+        </script>
+    </body>
+</html>
